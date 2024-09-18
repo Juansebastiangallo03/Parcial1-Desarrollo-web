@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Tu Nombre Apellido">
+    <meta name="description" content="Proyecto de desarrollo de aplicaciones web con HTML y CSS">
+    <title>Proyecto Web</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Primer Parcial Desarrollo de Aplicaciones Web</h1>
+        <nav>
+            <ul>
+                <li><a href="#" data-page="inicio">INICIO</a></li>
+                <li><a href="#" data-page="html">HTML</a></li>
+                <li><a href="#" data-page="css">CSS</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección Inicio con las cuatro cajas -->
+    <section id="inicio" class="page active">
+        <div class="grid-container">
+            <div class="box html">
+                <h2>HTML</h2>
+                <p>Lenguaje de marcado con el que declaramos la estructura de una página web. Consiste de elementos anidados que permiten modificar su comportamiento.</p>
+            </div>
+            <div class="box dns">
+                <h2>DNS</h2>
+                <p>Nos permite hablar con los servidores en internet sin necesidad de aprendernos sus direcciones IP.</p>
+            </div>
+            <div class="box tcp">
+                <h2>TCP/IP</h2>
+                <p>Es un conjunto de protocolos que permiten la comunicación entre dispositivos informáticos en una red, incluyendo Internet.</p>
+            </div>
+            <div class="box css">
+                <h2>CSS</h2>
+                <p>Lenguaje de estilos que permite definir cómo se verá una página web. Controla la presentación de los elementos estructurados en HTML.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección HTML -->
+    <section id="html" class="page">
+        <h2>Página sobre HTML</h2>
+        <p>HTML es el lenguaje de marcado que se usa para crear y estructurar las páginas web.</p>
+    </section>
+
+    <!-- Sección CSS -->
+    <section id="css" class="page">
+        <h2>Página sobre CSS</h2>
+        <p>CSS es el lenguaje de estilos usado para controlar la apariencia de las páginas web.</p>
+    </section>
+
+    <footer>
+        <p>Desarrollado por: <strong>Juan Sebastian Garavito Gallo</strong></p>
+    </footer>
+
+    <script>
+        // Manejador de navegación entre páginas
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', function() {
+                const page = this.getAttribute('data-page');
+                document.querySelectorAll('.page').forEach(section => {
+                    section.classList.remove('active'); // Oculta todas las secciones
+                });
+                document.getElementById(page).classList.add('active'); // Muestra la seleccionada
+            });
+        });
+    </script>
+</body>
+</html>
