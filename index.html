@@ -3,10 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Tu Nombre Apellido">
+    <meta name="author" content="Juan Sebastian Garavito Gallo">
     <meta name="description" content="Proyecto de desarrollo de aplicaciones web con HTML y CSS">
     <title>Proyecto Web</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-image: url('pexels-kovyrina-937980.jpg'); /* Ruta de la imagen de fondo */
+            background-size: cover;
+            background-position: center;
+        }
+        .box {
+            position: relative;
+            padding: 20px;
+            margin: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #fff; /* Fondo blanco para las cajas */
+        }
+        .box .logo {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            width: 50px; /* Ajusta el tamaño según necesites */
+            height: auto;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -26,18 +48,22 @@
             <div class="box html">
                 <h2>HTML</h2>
                 <p>Lenguaje de marcado con el que declaramos la estructura de una página web. Consiste de elementos anidados que permiten modificar su comportamiento.</p>
+                <img src="64px-HTML5_logo_resized.svg.png" alt="Logo HTML" class="logo"> <!-- Logo HTML -->
             </div>
             <div class="box dns">
                 <h2>DNS</h2>
                 <p>Nos permite hablar con los servidores en internet sin necesidad de aprendernos sus direcciones IP.</p>
+                <img src="DNS_logo.png" alt="Logo DNS" class="logo"> <!-- Logo DNS -->
             </div>
             <div class="box tcp">
                 <h2>TCP/IP</h2>
                 <p>Es un conjunto de protocolos que permiten la comunicación entre dispositivos informáticos en una red, incluyendo Internet.</p>
+                <img src="Aha-Soft-Free-Global-Security-Global-Network.512.png" alt="Logo TCP/IP" class="logo"> <!-- Logo TCP/IP -->
             </div>
             <div class="box css">
                 <h2>CSS</h2>
                 <p>Lenguaje de estilos que permite definir cómo se verá una página web. Controla la presentación de los elementos estructurados en HTML.</p>
+                <img src="w3_css-official.svg" alt="Logo CSS" class="logo"> <!-- Logo CSS -->
             </div>
         </div>
     </section>
@@ -72,3 +98,4 @@
     </script>
 </body>
 </html>
+
