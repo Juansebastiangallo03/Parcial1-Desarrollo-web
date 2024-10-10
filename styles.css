@@ -1,3 +1,4 @@
+/* Estilos globales */
 * {
     margin: 0;
     padding: 0;
@@ -7,145 +8,145 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
+    padding: 20px;
+    max-width: 1300px;
+    margin: 0 auto;
 }
 
 header {
     text-align: center;
     padding: 20px;
-    background-color: transparent;
-    text-shadow: 5px 5px 15px rgba(255, 255, 255, 0.9);
-    opacity: 0.8;
-    color: rgb(255, 255, 255);
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    margin-bottom: 20px;
 }
 
+h1 {
+    margin: 0;
+    font-size: 2rem;
+}
 
-nav ul {
-    list-style: none;
+main {
     display: flex;
-    justify-content: flex-end;
-    padding: 10px 0;
-    background-color: rgb(60, 21, 216);
-    opacity: 0.85;
-    
-
+    flex-direction: column;
+    gap: 20px;
 }
 
-nav ul li {
-    margin: 0 15px;
+section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-nav ul li a {
-    text-decoration: none;
-    color: rgb(252, 252, 252);
-    font-size: 1.2rem;
+/* Estilos para el formulario */
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
 }
 
-footer {
-    text-align: center;
+form label {
+    flex-basis: 100%;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input {
+    flex-basis: 48%;
     padding: 10px;
-    background-color: transparent;
-    color: rgb(255, 255, 255);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-bottom: 15px;
 }
 
-.page {
-    display: none;
-    padding: 20px;
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#fetch-users-btn {
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* Estilos para la lista de usuarios */
+ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas en pantallas grandes */
+    gap: 20px; /* Espacio entre los usuarios */
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Transición suave para el agrandamiento */
+}
+
+li:hover {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transform: scale(1.05); /* Efecto de agrandamiento */
+}
+
+li img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+pre {
+    margin: 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 0.9rem;
     text-align: center;
 }
 
-.page.active {
-    display: block;
+#message {
+    margin-top: 10px;
+    font-size: 1rem;
 }
 
-.grid-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    gap: 20px;
-    padding: 20px;
-    justify-items: center;
-    align-items: center;
+/* Diseño responsive */
+@media (max-width: 1024px) {
+    ul {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas medianas */
+    }
 }
 
-.box {
-    padding: 20px;
-    color: white;
-    text-align: left;
-    min-width: 250px;
-    min-height: 150px;
-    box-shadow: 5px 5px 15px rgba(255, 255, 255, 0.9);
-    opacity: 0.75;
-    position: relative;
-    border-top: 5px solid;
-}
+@media (max-width: 768px) {
+    ul {
+        grid-template-columns: 1fr; /* 1 columna en pantallas pequeñas */
+    }
 
-.html {
-    grid-column: 2 / 3;
-    grid-row: 3/ 1;
-    background-color: #d000ff;
-    border-top-color: #ff00ae;
-}
+    form input {
+        flex-basis: 100%;
+    }
 
-.dns {
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
-    background-color: #5e5f60;
-    border-top-color: #ff0000;
-}
-
-.tcp {
-    grid-column: 3 / 4;
-    grid-row: 2 / 3;
-    background-color: #db7070;
-    border-top-color: #d9ff00;
-}
-
-.css {
-    grid-column: 2 / 3;
-    grid-row: 2 / 4;
-    background-color: #05cfa3;
-    border-top-color: #2200ff;
-}
-
-.box .logo {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    width: 30px;
-    height: auto;
-}
-
-.grid-container_1 {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    gap: 20px;
-    padding: 20px;
-    justify-items: center;
-    align-items: center;
-}
-
-.box_1 {
-    grid-column: 1 / -1;
-    grid-row: 1 / 2;
-    padding: 20px;
-    color: white;
-    text-align: left;
-    min-width: 1080px;
-    min-height: 200px;
-    box-shadow: 5px 5px 15px rgba(255, 255, 255, 0.9);
-    opacity: 0.75;
-    position: relative;
-    border-top: 5px solid;
-}
-
-.box_1 .logo {
-   
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    width: 30px;
-    height: auto;
+    li img {
+        width: 80px;
+        height: 80px;
+    }
 }

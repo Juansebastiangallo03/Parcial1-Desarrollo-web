@@ -4,109 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Juan Sebastian Garavito Gallo">
-    <meta name="description" content="Proyecto de desarrollo de aplicaciones web con HTML y CSS">
-    <title>Proyecto Web</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            background-image: url('pexels-kovyrina-937980.jpg'); /* Ruta de la imagen de fondo */
-            background-size: cover;
-            background-position: center;
-        }
-        .box {
-            position: relative;
-            padding: 25px;
-            margin: 15px;
-            border-radius: 8px;
-        }
-        .box .logo {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            width: 30px; /* Ajusta el tamaño según necesites */
-            height: auto;
-        }
-    </style>
+    <meta name="description" content="Proyecto de desarrollo de aplicaciones web con HTML, CSS y Javascritp">
+    <title>Gestión de Usuarios</title>
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
     <header>
-        <h1>Primer Parcial Desarrollo de Aplicaciones Web(PAR)</h1>
-        <h2>HTML + CSS</h2>
-        <nav>
-            <ul>
-                <li><a href="#" data-page="inicio">INICIO</a></li>
-                <li><a href="#" data-page="html">HTML</a></li>
-                <li><a href="#" data-page="css">CSS</a></li>
-            </ul>
-        </nav>
+        <h1>Gestión de Usuarios</h1>
     </header>
-
-    <!-- Sección Inicio con las cuatro cajas -->
-    <section id="inicio" class="page active">
-        <div class="grid-container">
-            <div class="box html">
-                <h2>HTML</h2>
-                <p>Lenguaje de marcado con el que declaramos la estructura de una página web. Consiste de elementos anidados que permiten modificar su comportamiento.</p>
-                <img src="64px-HTML5_logo_resized.svg.png" alt="Logo HTML" class="logo"> <!-- Logo HTML -->
-            </div>
-            <div class="box dns">
-                <h2>DNS</h2>
-                <p>Nos permite hablar con los servidores en internet sin necesidad de aprendernos sus direcciones IP.</p>
-                <img src="DNS_logo.png" alt="Logo DNS" class="logo"> <!-- Logo DNS -->
-            </div>
-            <div class="box tcp">
-                <h2>TCP/IP</h2>
-                <p>Es un conjunto de protocolos que permiten la comunicación entre dispositivos informáticos en una red, incluyendo Internet.</p>
-                <img src="Aha-Soft-Free-Global-Security-Global-Network.512.png" alt="Logo TCP/IP" class="logo"> <!-- Logo TCP/IP -->
-            </div>
-            <div class="box css">
-                <h2>CSS</h2>
-                <p>Lenguaje de estilos que permite definir cómo se verá una página web. Controla la presentación de los elementos estructurados en HTML.</p>
-                <img src="w3_css-official.svg" alt="Logo CSS" class="logo"> <!-- Logo CSS -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Sección HTML -->
-    <section id="html" class="page">
-        <div class="grid-container_1">
-            <div class="box_1 html">
-                <h2>HTML</h2>
-                <p>Lenguaje de marcado con el que declaramos la estructura de una página web. Consiste de elementos anidados que permiten modificar su comportamiento.</p>
-                <img src="64px-HTML5_logo_resized.svg.png" alt="Logo HTML" class="logo"> <!-- Logo HTML -->
-            </div>
-    </section>
-
-    <!-- Sección CSS -->
-    <section id="css" class="page">
-        <div class="grid-container_1">
-            <div class="box_1 css">
-                <h2>CSS</h2>
-                <p>Lenguaje de estilos que permite definir cómo se verá una página web. Controla la presentación de los elementos estructurados en HTML.</p>
-                <img src="w3_css-official.svg" alt="Logo HTML" class="logo"> <!-- Logo HTML -->
-            </div>
-            
-    </section>
-
-    <footer>
-        <p>Desarrollado por: <strong>Juan Sebastian Garavito Gallo</strong></p>
-        <p>                  <strong>Universidad de Antioquia</strong></p>
-        <p>                  <strong>2024-2</strong></p>
-
-    </footer>
-
-    <script>
-        // Manejador de navegación entre páginas
-        document.querySelectorAll('nav ul li a').forEach(link => {
-            link.addEventListener('click', function() {
-                const page = this.getAttribute('data-page');
-                document.querySelectorAll('.page').forEach(section => {
-                    section.classList.remove('active'); // Oculta todas las secciones
-                });
-                document.getElementById(page).classList.add('active'); // Muestra la seleccionada
-            });
-        });
-    </script>
+    
+    <main>
+        <section>
+            <h2>Crear/Modificar Usuario</h2>
+            <form id="user-form">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <input type="hidden" id="user-id">
+                <button type="submit" id="submit-btn">Enviar</button>
+            </form>
+            <p id="message"></p>
+        </section>
+        
+        <section>
+            <h2>Listado de Usuarios</h2>
+            <ul id="user-list"></ul>
+        </section>
+    </main>
+    <script type="module" src="./js/app.js"></script>
 </body>
 </html>
-
